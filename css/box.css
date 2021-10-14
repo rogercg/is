@@ -1,0 +1,109 @@
+.box-portrait{
+    position: relative;
+    width: 200px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.box-portrait::before{
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animateSpin 4s linear infinite;
+}
+
+.box-portrait::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    border-radius: 16px;
+}
+
+@keyframes animateSpin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(350deg);
+    }
+}
+
+.box-portrait h2{
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+}
+
+
+.box-portrait img{
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+    padding: 5px 5px;
+    border-radius: 20px;
+}
+
+.box-landscape{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.box-landscape::before{
+    content: '';
+    position: absolute;
+    width: 140%;
+    height: 50%;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animateSpin 4s linear infinite;
+}
+
+.box-landscape::after{
+    content: '';
+    position: absolute;
+    /* inset: 4px; */
+    background: #0e1538;
+    border-radius: 16px;
+}
+
+@keyframes animateSpin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(350deg);
+    }
+}
+
+.box-landscape h2{
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+}
+
+
+.box-landscape img{
+    position: relative;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    z-index: 10;
+}
