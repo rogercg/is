@@ -23,7 +23,7 @@
         margin: 0;
         text-transform: capitalize;
     }
-    .effect-points{
+    .effect-points, .skills{
         display: none;
     }
     .work1{
