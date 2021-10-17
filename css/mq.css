@@ -16,6 +16,14 @@
         color: white;
         margin: 0;
     }
+    .p-primary {
+        font-size: 16px;
+        margin: 0;
+    }
+    .h2-primary {
+        font-size: 34px;
+        margin: 0;
+    }
     .home-section .home-text h1 {
         font-size: 18px;
         font-weight: 500;
@@ -23,9 +31,26 @@
         margin: 0;
         text-transform: capitalize;
     }
-    .effect-points, .skills{
+    .section-subtitle{
         display: none;
     }
+    .effect-points{
+        display: none;
+    }
+    .skills{
+        position: initial;
+        max-width: 85px;
+        width: 100%;
+        opacity: 1;
+        left: auto;
+        top: auto;
+        margin: auto;
+        margin-left: 15%;
+    }
+    .skill-flutter{
+        margin-left: 35%;
+    }
+
     .work1{
         left: 10%;
     }
