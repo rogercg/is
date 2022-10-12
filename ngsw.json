@@ -1,0 +1,147 @@
+{
+  "configVersion": 1,
+  "timestamp": 1665594847465,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.js",
+        "/main-es5.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.js",
+        "/polyfills-es5.js",
+        "/runtime-es2015.js",
+        "/runtime-es5.js",
+        "/src_app_modules_in-app_in-app_module_ts-es2015.js",
+        "/src_app_modules_in-app_in-app_module_ts-es5.js",
+        "/styles.css",
+        "/vendor-es2015.js",
+        "/vendor-es5.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/colors.txt",
+        "/assets/fonts/ArialUnicodeMS.ttf",
+        "/assets/fonts/Helvetica.ttf",
+        "/assets/icons/archivo.png",
+        "/assets/icons/archivo.svg",
+        "/assets/icons/feedback/error.svg",
+        "/assets/icons/feedback/info.svg",
+        "/assets/icons/feedback/question.svg",
+        "/assets/icons/feedback/success.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/medalla.png",
+        "/assets/icons/medalla.svg",
+        "/assets/icons/pago.png",
+        "/assets/icons/pago.svg",
+        "/assets/icons/venta.png",
+        "/assets/icons/venta.svg",
+        "/assets/images/Captura.PNG",
+        "/assets/images/Pantallas 1.png",
+        "/assets/images/Pantallas 2.png",
+        "/assets/images/Pantallas 3.png",
+        "/assets/images/avataaars.png",
+        "/assets/images/carne-de-identidad.png",
+        "/assets/images/castor-info.png",
+        "/assets/images/castor.png",
+        "/assets/images/mensaje.png",
+        "/assets/images/no-preview.jpg",
+        "/assets/kasnet-logo.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/colors.txt": "2b02deb68cd74178ca6557a63808a68282823340",
+    "/assets/fonts/ArialUnicodeMS.ttf": "d9a78e55980c6db61d46edbbfb4fd3589c1089c6",
+    "/assets/fonts/Helvetica.ttf": "bf6e82531a0b8d0ed5f82ca41e9748aa8d2ed8c9",
+    "/assets/icons/archivo.png": "d7ba47b4457c6251982c45d4c38c9776c3154a74",
+    "/assets/icons/archivo.svg": "9f5657043190db99cfe3469c06bce183b49a24a7",
+    "/assets/icons/feedback/error.svg": "ae1601b20c20f92be02d75733c49b57c2d2381bb",
+    "/assets/icons/feedback/info.svg": "bf74dd5477cf3eeed70f4902280abfaa12394ef7",
+    "/assets/icons/feedback/question.svg": "ac89b53d65a107f09411f87999e25494ed1c4f7a",
+    "/assets/icons/feedback/success.svg": "3cac50185fde78679c5c23a7f998b0a6bdc672b6",
+    "/assets/icons/icon-128x128.png": "69ba209f076b869d68b1aed7a967dcc766e3f564",
+    "/assets/icons/icon-144x144.png": "4d866943f86ada196a13654ce80b09550a7cdfc6",
+    "/assets/icons/icon-152x152.png": "ed31c097915fbb7c23bd76c00ffc544a4d9a53d9",
+    "/assets/icons/icon-192x192.png": "7f033a21ca5837ffabf6357d3e054bd79446ee6c",
+    "/assets/icons/icon-384x384.png": "d3c59ca11884752cd7c6f7ef662b6155cd79278b",
+    "/assets/icons/icon-512x512.png": "42cd59a0d18b7ac0c01ab2ec42ee1e3ae1bec916",
+    "/assets/icons/icon-72x72.png": "5b3ee1936641867f35cc401ba96418e82c2db8e3",
+    "/assets/icons/icon-96x96.png": "b05095eea325437d52c9d18e666499a9f8f1667b",
+    "/assets/icons/medalla.png": "a3bfc366e6a69847ac5b42790d4c2124129a3310",
+    "/assets/icons/medalla.svg": "6589cac0c518008f420b5e05d232f7ec9872ee45",
+    "/assets/icons/pago.png": "52274dfe7c7a81fc73f093af2e7133bea701fd96",
+    "/assets/icons/pago.svg": "8863d0ab69b4e6b2964e9537e33feeeed70b10fe",
+    "/assets/icons/venta.png": "60b5969491766cc9603c621f6f9fb49ccc2be235",
+    "/assets/icons/venta.svg": "1c0c400e5d09febdce620a985bd71afb2bbfae42",
+    "/assets/images/Captura.PNG": "412e1fa862f5157347836aaa6a1a75e68771d69d",
+    "/assets/images/Pantallas 1.png": "52f7f2066fa99577fbfcdcef5b117abd206b922e",
+    "/assets/images/Pantallas 2.png": "d24536b7ac57196b7ac1c45c76caa8d93847602a",
+    "/assets/images/Pantallas 3.png": "50facf086e86ca612f0085fd739d700eb58d436f",
+    "/assets/images/avataaars.png": "60edcb89c2d4bff5cfc0f0f11581a3698fe9e754",
+    "/assets/images/carne-de-identidad.png": "5dfe608af7fbbe1e94a7a3cce9d4329c69b4acbb",
+    "/assets/images/castor-info.png": "dcc237f5a183c54c14a507623b6485a71d643993",
+    "/assets/images/castor.png": "9aea28774645855c2d6a18d18a3716b173bdb885",
+    "/assets/images/mensaje.png": "00746771210fb82269b7c933e7edc138b8134656",
+    "/assets/images/no-preview.jpg": "109edfd43acf884e44fe17cf3961344b715b939d",
+    "/assets/kasnet-logo.svg": "f68dcb960415eb52e41f9810d2fc1d24a21ee667",
+    "/favicon.ico": "22afd14a132177ca956344f47d45af38e46c944a",
+    "/index.html": "1b43326d2d74e25a37ba0d5a11486e1924c4552e",
+    "/main-es2015.js": "05786bb4bb17294f13d987f8e0519ffc4a397f8f",
+    "/main-es5.js": "766fb8b7ca6c6d8fa2b2baa457c59cdbf3c8fa32",
+    "/manifest.webmanifest": "b60425871dbae934a7806e3ef1ebf5a8493322fe",
+    "/polyfills-es2015.js": "9822459bd9d7f1a8d7c55d2f8edf6e8476ca5963",
+    "/polyfills-es5.js": "91afcd5bf6e5a5e47cf3520ae1f8bdaf02896aea",
+    "/runtime-es2015.js": "42733362670a43c7b05679459fc1ef0b2a35f21e",
+    "/runtime-es5.js": "050d07e67144854560ae336320968d6f76c4736f",
+    "/src_app_modules_in-app_in-app_module_ts-es2015.js": "ff0720631f94cdea0eb3218be669c60770b7745d",
+    "/src_app_modules_in-app_in-app_module_ts-es5.js": "346696e9fea187f06fe3a45176f1bf5e4c8044d9",
+    "/styles.css": "7149d9c718a58e6ce3bf589fd94c370994c5d325",
+    "/vendor-es2015.js": "60c40e5eaf6693e0fe66e4dc30d73fedb12dcc16",
+    "/vendor-es5.js": "10c252c7e8718c3b2f50b5b234e5d790f6dbc811"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
