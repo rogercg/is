@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Sections - Roger</title>
+    <link rel="icon" type="image/png" href="./favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/box.css">
+    <link rel="stylesheet" href="./css/mq.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Ravi+Prakash&display=swap');
+        
+        :root {
+            --bg-black-900: #000000;
+            --bg-black-800: #2b2c30;
+            --bg-black-100: #dddddd;
+            --bg-black-50: #eff0f4;
+            --text-black-900: #000000;
+            --text-black-700: #555555;
+            --text-black-600: #666666;
+            --text-black-300: #bbbbbb;
+            --primary-color: #06d79c;
+            --secondary-color: #ff4986;
+            --accent-color: #8a49ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto Mono", monospace;
+        }
+
+        body {
+            background-color: var(--bg-black-800);
+            color: var(--text-black-300);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* EXPERIENCE TIMELINE SECTION */
+        .experience-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 4rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 6rem;
+            text-transform: lowercase;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: var(--primary-color);
+            border: 3px solid var(--bg-black-800);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(6, 215, 156, 0.5);
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .timeline-content h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-content .company {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .timeline-content .duration {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: rgba(6, 215, 156, 0.2);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(6, 215, 156, 0.3);
+        }
+
+        /* PROJECTS TABS SECTION */
+        .projects-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(6, 215, 156, 0.03), rgba(255, 73, 134, 0.03));
+        }
+
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-black-300);
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: "Roboto Mono", monospace;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            border-color: var(--primary-color);
+            color: white;
+            background: rgba(6, 215, 156, 0.1);
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .tab-btn:hover::before {
+            left: 100%;
+        }
+
+        .projects-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .projects-grid.active {
+            display: grid;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: var(--primary-color);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .project-link:hover {
+            background: var(--primary-color);
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-content p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-status {
+            display: inline-block;
+            background: rgba(6, 215, 156, 0.2);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 767px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item.right {
+                left: 0%;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 200px;
+                text-align: center;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Effects decoration */
+        .floating-shape {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 10%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-color);
+            transform: rotate(45deg);
+            bottom: 20%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOGO -->
+    <nav class="navbar navbar-light bg-transparent fixed-top">
+        <div class="container-fluid">
+            <div class="logo navbar-brand">
+                <a href="index.html">{R}</a>
+            </div>
+            <i onclick="collapseMenu()" id="btn-menu-open" class="bi bi-list btn-menu" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"></i>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <i onclick="collapseMenu()" id="btn-menu-close" class="bi bi-x-lg text-reset btn-menu" type="button"
+                        data-bs-dismiss="offcanvas" aria-label="Close"></i>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 navbar-nav-custom">
+                        <li class="nav-item">
+                            <a onclick="collapseMenu()" class="nav-link nav-link-custom" aria-current="page"
+                                href="./index.html">.is()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="collapseMenu()" class="nav-link nav-link-custom" href="./experience.html">.experience()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="collapseMenu()" class="nav-link nav-link-custom" href="./projects.html">.projects()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="collapseMenu()" class="nav-link nav-link-custom" target="_blank"
+                                href="https://www.linkedin.com/in/rogercg/">.contact()</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Personal Projects</h2>
+            <p class="section-subtitle">.side_projects()</p>
+            
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="web">Web Apps</button>
+                    <button class="tab-btn" data-tab="mobile">Mobile</button>
+                    <button class="tab-btn" data-tab="games">Games</button>
+                    <button class="tab-btn" data-tab="tools">Dev Tools</button>
+                </div>
+                
+                <!-- Web Apps Tab -->
+                <div class="projects-grid active" id="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #d06df1 0%, #3b1d59 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">🎲</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">In Development</div>
+                            <h3>FideliGames</h3>
+                            <p>A gaming platform that offers a variety of interactive business games for users to enjoy.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">NodeJS</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #84a5e6 0%, #316ce2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">👓</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Live - Ongoing Updates</div>
+                                <h3>GlassClock</h3>
+                                <p>Time management and productivity system for agile and waterfall work teams</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">NodeJS</span>
+                                <span class="tech-tag">API GPT-3</span>
+                                <span class="tech-tag">Digital Ocean</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg,  #c4c1c4 0%, #474747 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">🤖</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Completed</div>
+                                <h3>YourGPT</h3>
+                                <p>ChatGPT clone with additional features connected to local AI models and external APIs</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">NodeJS</span>
+                                <span class="tech-tag">API GPT</span>
+                                <span class="tech-tag">API Claude</span>
+                                <span class="tech-tag">API Ollama</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Digital Ocean</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="projects-grid active" id="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #d94a4a 0%, #2f2e2f 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📚</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Live - Ongoing Updates</div>
+                            <h3>Scarab ATS</h3>
+                            <p>AI-powered talent management and recruitment portal that also allows users to improve their CV with AI assistance</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">NodeJS</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Heroku</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                    </div>
+
+                    <div class="project-card">
+                    </div>
+                    
+                </div>
+                
+                <!-- Mobile Tab -->
+                <div class="projects-grid" id="mobile">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📱</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">📱</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Beta</div>
+                            <h3>Fitness Tracker</h3>
+                            <p>Cross-platform fitness app with workout tracking, nutrition logging, and social features.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">💰</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">📱</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Planning</div>
+                            <h3>Expense Manager</h3>
+                            <p>Personal finance management app with budget tracking, expense categorization, and financial insights.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Ionic</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Games Tab -->
+                <div class="projects-grid" id="games">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #fa709a 0%, #fee140 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">🎮</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Prototype</div>
+                            <h3>DUFO</h3>
+                            <p>Local multiplayer spaceship game with survival and exploration elements.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools Tab -->
+                <div class="projects-grid" id="tools">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 2rem;">🛠️</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://www.npmjs.com/package/react-native-debug-monitor" class="project-link">🔗</a>
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">Library</div>
+                            <h3>React Native Debug Monitor</h3>
+                            <p>Monitor and debug Storage and Network requests in React Native applications</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div style="background: linear-gradient(45deg, #d299c2 0%, #fef9d7 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 2rem;">🛠️</div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://marketplace.visualstudio.com/items?itemName=rogercg.react-native-debug-monitor-manager" class="project-link">🔗</a>
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-status">VSCode Extension</div>
+                            <h3>React Native Debug Monitor</h3>
+                            <p>Viewer to monitor and debug Storage and Network requests in React Native applications</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Timeline animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const projectGrids = document.querySelectorAll('.projects-grid');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and grids
+                tabBtns.forEach(b => b.classList.remove('active'));
+                projectGrids.forEach(g => g.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding grid
+                const targetTab = btn.getAttribute('data-tab');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Smooth scroll behavior for project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
