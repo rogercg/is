@@ -219,7 +219,7 @@
             width: 16px;
             height: 16px;
             right: -8px;
-            background: var(--bg-black-800);
+            background: var(--primary-color); /* CAMBIAR de var(--bg-black-800) a var(--primary-color) */
             border: 2px solid var(--primary-color);
             top: 20px;
             border-radius: 50%;
@@ -318,11 +318,11 @@
             }
 
             .timeline-item::after {
-                left: 22px;
+                left: 23px;
             }
 
             .timeline-item.right {
-                left: 0%;
+                left: 31px;
             }
 
             .section-title {
@@ -370,6 +370,7 @@
     <!-- AVAILABILITY SECTION -->
     <div class="availability-section">
         <div class="container">
+ 
             <div class="availability-container">
                 <div class="availability-info">
                     <div class="availability-status">
@@ -381,7 +382,7 @@
                 </div>
                 <div class="availability-actions">
                     <a href="mailto:rantonio_cg@outlook.com" class="btn-contact-me">Get in Touch</a>
-                    <a href="https://rogercg.github.io/is/" target="_blank" class="btn-download-cv">View Portfolio</a>
+                    <a href="./projects.html" target="_blank" class="btn-download-cv">View Portfolio</a>
                 </div>
             </div>
         </div>
@@ -409,6 +410,8 @@
                             <span class="tech-tag">SCRUM</span>
                         </div>
                     </div>
+
+                    <div class="effect effect-square"></div>
                 </div>
 
                 <!-- Management and Systems - Frontend Specialist -->
@@ -427,6 +430,7 @@
                             <span class="tech-tag">AWS</span>
                         </div>
                     </div>
+                    <div class="effect effect-triangle-experience"></div>
                 </div>
 
                 <!-- Freelance/Technology Consultant -->
@@ -446,6 +450,7 @@
                             <span class="tech-tag">AWS</span>
                         </div>
                     </div>
+                    <div class="effect effect-square"></div>
                 </div>
 
                 <!-- DOEET Spain -->
@@ -464,6 +469,7 @@
                             <span class="tech-tag">GitLab</span>
                         </div>
                     </div>
+                    <div class="effect effect-triangle-experience"></div>
                 </div>
 
                 <!-- MDP Consulting -->
@@ -481,6 +487,7 @@
                             <span class="tech-tag">Figma</span>
                         </div>
                     </div>
+                    <div class="effect effect-square"></div>
                 </div>
 
                 <!-- Globokas -->
@@ -498,6 +505,7 @@
                             <span class="tech-tag">Local Storage</span>
                         </div>
                     </div>
+                    <div class="effect effect-triangle-experience"></div>
                 </div>
 
                 <!-- TextilPeru -->
@@ -515,6 +523,7 @@
                             <span class="tech-tag">PostgreSQL</span>
                         </div>
                     </div>
+                    <div class="effect effect-square"></div>
                 </div>
 
                 <!-- Fingerlock -->
@@ -531,6 +540,7 @@
                             <span class="tech-tag">IT Management</span>
                         </div>
                     </div>
+                    <div class="effect effect-triangle-experience"></div>
                 </div>
 
                 <!-- Handlom -->
@@ -547,12 +557,19 @@
                             <span class="tech-tag">Waterfall</span>
                         </div>
                     </div>
+                    <div class="effect effect-square"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
     <script>
+        let loader = document.querySelector(".loader-wrapper");
+
         // Timeline animation on scroll
         const observerOptions = {
             threshold: 0.1,
@@ -571,6 +588,12 @@
         document.querySelectorAll('.timeline-item').forEach(item => {
             observer.observe(item);
         });
+
+        window.addEventListener("load", vanish);
+
+        function vanish(){
+            loader.classList.add("disppear");
+        }
     </script>
 </body>
 </html>

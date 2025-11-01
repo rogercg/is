@@ -140,6 +140,45 @@ body {
   margin: 0 3px 8px;
 }
 
+/* Ajuste para efectos dentro del timeline */
+.timeline-item .effect {
+    position: absolute !important;
+    top: 150px;
+}
+
+.timeline-item .effect-square {
+    animation: spin 10s linear infinite;
+}
+
+.timeline-item .effect-triangle {
+    animation: spin 15s linear infinite;
+}
+.effect-triangle-experience {
+    border-top: 30px solid transparent;
+    border-left: 30px solid #06d79c;
+    /* Agrega estas líneas: */
+    transform-origin: 10px 15px; /* Ajusta el punto de rotación */
+    animation: spin 15s linear infinite;
+}
+
+/* Solo desktop */
+@media (min-width: 768px) {
+    .timeline-item.left .effect {
+        right: -120px; /* Formas a la derecha de items izquierdos */
+    }
+    
+    .timeline-item.right .effect {
+        left: -120px; /* Formas a la izquierda de items derechos */
+    }
+}
+
+/* Ocultar en mobile */
+@media (max-width: 767px) {
+    .timeline-item .effect {
+        display: none;
+    }
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -486,10 +525,16 @@ img {
   left: 50%;
   top: 0px;
 }
-.skill-ionic{
-  left: 100%;
+.skill-react{
+  left: 0px;
   top: 0px;
 }
+
+.skill-ionic{
+  left: 50%;
+  top: 0px;
+}
+
 .skill-nodejs{
   top: 50%;
   left: 0px;

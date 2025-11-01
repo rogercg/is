@@ -249,15 +249,35 @@
             left: 100%;
         }
 
+        /* CORRECTO: oculto por defecto y muestro solo el activo */
         .projects-grid {
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            animation: fadeInUp 0.6s ease;
+            display: none; /* oculto por defecto */
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: 30px;
+            row-gap: 64px;
         }
 
+        /* muestra el tab seleccionado */
         .projects-grid.active {
             display: grid;
+            animation: fadeInUp 0.6s ease; /* mueve la animación aquí si la quieres solo al activar */
+        }
+
+
+        /* Tablets / laptops medianas: 2 columnas */
+        @media (max-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 56px;
+            }
+        }
+
+        /* Móvil: 1 columna */
+        @media (max-width: 767px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                row-gap: 28px; /* más compacto en móvil */
+            }
         }
 
         .project-card {
@@ -491,7 +511,7 @@
     <section class="projects-section">
         <div class="container">
             <h2 class="section-title">Projects & Freelance</h2>
-            <p class="section-subtitle">.my_work()</p>
+            <p class="section-subtitle">.projects()</p>
             
             <div class="tabs-container">
                 <div class="tabs-nav">
@@ -511,9 +531,11 @@
                             <img src="./assets/work/yourgpt/login.png" alt="YourGPT Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -539,9 +561,11 @@
                             <img src="./assets/work/primax/login.png" alt="PRIMAX GLP Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -565,7 +589,7 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a target="_blank" href="https://servicios.tarjetacencosud.pe/" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">💻</a> -->
                                 </div>
                             </div>
                         </div>
@@ -580,10 +604,6 @@
                         </div>
                     </div>
 
-                </div>
-                <br>
-                <div class="projects-grid active" id="web">
-
                     <!-- Scarab ATS -->
                     <div class="project-card">
                         <div class="project-image">
@@ -591,9 +611,11 @@
                             <img src="./assets/work/ats/login.png" alt="Scarab ATS" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -617,8 +639,9 @@
                             <img src="./assets/work/doeet/Login.png" alt="DOOET Login Interface" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
                             </div>
                         </div>
@@ -643,9 +666,11 @@
                             <img src="./assets/work/altair/1 Login.PNG" alt="Altair Login Interface" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -661,9 +686,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <br>
-                <div class="projects-grid active" id="web">
 
                     <!-- GlassClock -->
                     <div class="project-card">
@@ -672,9 +694,11 @@
                             <img src="./assets/work/glassclock/login.png" alt="GlassClock Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -698,7 +722,7 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a target="_blank" href="https://bancavirtual-personas.bancom.pe/" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">💻</a> -->
                                 </div>
                             </div>
                         </div>
@@ -723,7 +747,7 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a target="_blank" href="https://bancavirtual-personas.bancom.pe/" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">💻</a> -->
                                 </div>
                             </div>
                         </div>
@@ -739,10 +763,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>
-                <br>
-                <div class="projects-grid active" id="web">
 
                     <!-- FideliGames -->
                     <div class="project-card">
@@ -751,9 +771,11 @@
                             <img src="./assets/work/fideligames/login.png" alt="FideliGames Platform" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -777,9 +799,11 @@
                             <img src="./assets/work/lap/login.png" alt="Jockey Plaza E-commerce" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a target="_blank" href="https://bancavirtual-personas.bancom.pe/" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a target="_blank" href="https://bancavirtual-personas.bancom.pe/" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
+                                     <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -802,8 +826,8 @@
                             <img src="./assets/work/livienda/landing.png" alt="Livienda Platform" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <a target="_blank" href="https://www.livienda.com/dashboard/principal" class="project-link">🔗</a>
+                                    <!-- <a href="#" class="project-link">💻</a> -->
                                 </div>
                             </div>
                         </div>
@@ -824,12 +848,15 @@
                 <div class="projects-grid" id="mobile">
                     <div class="project-card">
                         <div class="project-image">
-                            <div style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📱</div>
+                            <!-- <div style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📱</div> -->
+                            <img src="./assets/work/primax/logo.jpg" alt="PRIMAX Mobile Inspection App" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <!-- <a href="#" class="project-link">🔗</a>
+                                    <a href="#" class="project-link">💻</a> -->
+                                    <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">⏳</span>
                                 </div>
+                                <span> &nbsp; Soon</span>
                             </div>
                         </div>
                         <div class="project-content">
@@ -848,22 +875,26 @@
                     
                     <div class="project-card">
                         <div class="project-image">
-                            <div style="background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">💰</div>
+                            <!-- <div style="background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">💰</div> -->
+                            <img src="./assets/work/st/blog.png" alt="Expense Manager App" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link">🔗</a>
-                                    <a href="#" class="project-link">💻</a>
+                                    <a target="_blank" href="https://www.saludtotalapp.com/" class="project-link">🔗</a>
+                                    <!-- <a href="https://play.google.com/store/apps/details?id=com.saludtotalapp.app" class="project-link">🔗</a> -->
+                                    <!-- <a href="#" class="project-link">💻</a> -->
                                 </div>
                             </div>
                         </div>
                         <div class="project-content">
-                            <div class="project-status">Planning</div>
-                            <h3>Expense Manager</h3>
-                            <p>Personal finance management app with budget tracking, expense categorization, and financial insights.</p>
+                            <div class="project-status">Freelance</div>
+                            <h3>Salud Total App</h3>
+                            <p>Preventive health application that allows users to receive smart notifications to remind them about medications, medical checkups, health monitoring, and wellness appointments.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Ionic</span>
                                 <span class="tech-tag">Angular</span>
-                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Digital Ocean</span>
                             </div>
                         </div>
                     </div>
@@ -941,7 +972,13 @@
         </div>
     </section>
 
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
     <script>
+        let loader = document.querySelector(".loader-wrapper");
+
         // Timeline animation on scroll
         const observerOptions = {
             threshold: 0.1,
@@ -989,6 +1026,12 @@
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+         window.addEventListener("load", vanish);
+
+        function vanish(){
+            loader.classList.add("disppear");
+        }
     </script>
 </body>
 </html>
